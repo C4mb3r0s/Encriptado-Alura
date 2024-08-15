@@ -7,21 +7,76 @@
 :root {
   --blue: #0A3871;
   --white: #ffffff;
-  --grey: #D8DFE8;
-  --grey-tr: #495057;
-  --black: #000;
+  --background: #D8DFE8;
+  --grey-adv: #495057;
+  --shadow: #000;
+}
+
+.darkmode {
+  --blue: #535C91;
+  --white: #D8DFE8;
+  --background: #070F2B;
+  --grey-adv: #ffffff;
+  --shadow: #9DB2BF;
 }
 
 body {
-  background-color: var(--grey);
+  background-color: var(--background);
   font-family: 'Inter';
   font-size: 32px;
   padding: 0;
   margin: 0;
 }
 
+.glass {
+  border-radius: 12px;
+  background: var(--white);
+  backdrop-filter: blur(16px) saturate(12%);
+  width: 120px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
 .logo {
   margin-top: 15px;
+}
+
+.Logo {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+.theme-switch {
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--grey-adv);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 130px;
+  top: 10px;
+  border: none;
+}
+
+.theme-switch svg {
+  fill: var(--background);
+}
+
+.theme-switch svg:last-child {
+  display: none;
+}
+
+.darkmode .theme-switch svg:first-child {
+  display: none;
+}
+
+.darkmode .theme-switch svg:last-child {
+  display: block;
 }
 
 .secciones {
@@ -43,7 +98,7 @@ body {
 
 .mensaje {
   background-color: var(--white);
-  box-shadow: 10px 10px 10px var(--black);
+  box-shadow: 10px 10px 10px var(--shadow);
   width: 100%;
   height: 400px;
   resize: none;
@@ -69,7 +124,7 @@ body {
 }
 
 .Advertencia {
-  color: var(--grey-tr);
+  color: var(--grey-adv);
   margin-top: 10px;
   margin-bottom: 0;
   margin-left: 120px;
@@ -86,8 +141,9 @@ body {
 
 .btn-encrip {
   background-color: var(--blue);
-  color: var(--grey);
+  color: var(--background);
   font-size: 16px;
+  font-weight: 600;
   width: 300px;
   height: 54.31px;
   border-radius: 24px;
@@ -95,10 +151,11 @@ body {
 }
 
 .btn-desencrip {
-  background-color: var(--grey);
+  background-color: var(--white);
   color: var(--blue);
   border: 1px solid var(--blue);
   font-size: 16px;
+  font-weight: 600;
   width: 300px;
   height: 54.31px;
   border-radius: 24px;
@@ -152,7 +209,7 @@ body {
   transform: translateY(-50px) translateX(120px);
   resize: none;
   border: none;
-  box-shadow: 10px 10px 10px var(--black);
+  box-shadow: 10px 10px 10px var(--shadow);
 }
 
 ::placeholder {
@@ -172,9 +229,10 @@ body {
   border-radius: 24px;
   border: 1px solid var(--blue);
   color: var(--blue);
-  background-color: var(--grey);
-  transform: translateY(450px) translateX(120px);
+  background-color: var(--background);
+  transform: translateY(400px) translateX(120px);
   display: none;
+  font-weight: 600;
 }
 
 footer {
@@ -183,9 +241,10 @@ footer {
   color: var(--white);
   text-align: center;
   position: static;
+  margin: 0;
   bottom: 0;
   width: 100%;
-  height: auto;
+  padding: 1.5px;
 }
 
 @media (max-width: 1250px) {
@@ -242,12 +301,14 @@ footer {
   }
 
   .btn-copiar {
-    transform: translateX(0) translateY(430px);
+    transform: translateX(0) translateY(380px);
     width: 18%;
   }
 
   footer {
     font-size: 1.3rem;
+    bottom: 0;
+    margin: 0;
   }
 }
 
@@ -278,7 +339,7 @@ footer {
 
   .mensajes {
     width: 70%;
-    transform: translateY(75px);
+    transform: translateY(50px);
   }
 
   .botones {
@@ -300,6 +361,7 @@ footer {
   .btn-copiar {
     width: 80%;
     margin-left: 30px;
+    transform: translateY(300px) translateX(-10px);
   }
 
   footer {
