@@ -53,7 +53,7 @@ body {
   width: 50px;
   padding: 0;
   border-radius: 50%;
-  background-color: var(--white);
+  background-color: var(--grey-adv);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -321,7 +321,10 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .theme-switch {}
+  .theme-switch {
+    top: 10px;
+    left: 130px;
+  }
 
   .secciones {
     flex-direction: column;
